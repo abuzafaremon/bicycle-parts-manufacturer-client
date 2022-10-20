@@ -1,0 +1,18 @@
+.hero {
+  text-align: center;
+  color: #fff;
+  height: 80vh;
+  background: url('/public/assets/images/banner.jpg') no-repeat center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  background: #00000057;
+}
+
+.overlay div {
+  height: 100%;
+}

@@ -1,10 +1,13 @@
+import Banner from "./Banner/Banner";
+import BusinessSummery from "./BusinessSummery/BusinessSummery";
 
 
 const Home = () => {
   return (
-    <div>
-      Home
-    </div>
+    <>
+      <Banner />
+      <BusinessSummery />
+    </>
   )
 }
 
