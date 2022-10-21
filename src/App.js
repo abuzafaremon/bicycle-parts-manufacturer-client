@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Home from './Pages/Home/Home';
 import Login from './Pages/LoginRegister/Login/Login';
@@ -22,6 +23,7 @@ function App() {
         <Route path='/register' element={<Register />}></Route>
         <Route path='*' element={<NotFound />}></Route>
       </Routes>
+      <Footer />
     </div>
   );
 }

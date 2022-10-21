@@ -7,11 +7,11 @@ import './Header.css';
 
 function Header() {
   return (
-    <header className='sticky-top'>
+    <header className='sticky-top bg-grd'>
       {['md'].map((expand) => (
         <Navbar key={expand} variant='dark' expand={expand}>
           <Container>
-            <Link className='nav-link' to='/'><Navbar.Brand>Bicycle World</Navbar.Brand></Link>
+            <Link className='nav-link fw-bold' to='/'><Navbar.Brand><span className='text-dark'>B</span>icycle <span className='text-dark'>W</span>orld</Navbar.Brand></Link>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}

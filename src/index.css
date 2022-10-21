@@ -6,3 +6,7 @@
   list-style: none;
   transition: all .3s;
 }
+
+.bg-grd {
+  background: linear-gradient(to right, #ff99cc 0%, #33ccff 100%);
+}

@@ -7,7 +7,7 @@ const BusinessSummery = () => {
     <section className='py-5'>
       <Container>
         <h3 className='text-center'>Our Business Summery</h3>
-        <div className="summaries bg-grd text-light w-50 m-auto rounded-4 p-3 d-flex justify-content-between align-items-center gap-2">
+        <div className="summaries bg-grd text-light w-75 m-auto rounded-4 p-3 d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
           <div className="summery text-center">
             <div className="fs-6">Total Customer</div>
             <div className="fw-bold fs-2">100+</div>
