@@ -1,0 +1,10 @@
+.login-page {
+
+  background: url('/public/assets/images/banner.jpg') no-repeat;
+  background-size: cover;
+}
+
+.login {
+  max-width: 30%;
+  margin: 0 auto;
+}
