@@ -1,11 +1,26 @@
+import { signOut } from 'firebase/auth';
+import { Dropdown } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import { Link } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link, useNavigate } from 'react-router-dom';
+import auth from '../../Firebase/Firebase.init';
+import Loading from '../Loading/Loading';
 import './Header.css';
 
 function Header() {
+  const [user, loading] = useAuthState(auth);
+  const navigate = useNavigate();
+  if (loading) {
+    return <Loading />
+  }
+  const logout = () => {
+    signOut(auth);
+    navigate('/login');
+  };
+  console.log(user?.photoURL);
   return (
     <header className='sticky-top bg-grd'>
       {['md'].map((expand) => (
@@ -24,10 +39,27 @@ function Header() {
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
-                <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Link className='nav-link' to='/'>Home</Link>
-                  <Link className='nav-link' to='/purchase'>Purchase</Link>
-                  <Link className='nav-link' to='/login'>Login</Link>
+                <Nav className="justify-content-end flex-grow-1 pe-3 gap-2">
+                  <Link className='nav-link btn-grd rounded' to='/'>Home</Link>
+                  <Link className='nav-link btn-grd rounded' to='/purchase'>Purchase</Link>
+                  {user ?
+                    <Dropdown>
+                      <Dropdown.Toggle className='btn-grd border-0'>
+                        {user?.displayName.split(' ')[1]}
+                      </Dropdown.Toggle>
+
+                      <Dropdown.Menu className='bg-grd border-0'>
+                        <Dropdown.Item>Profile</Dropdown.Item>
+                        <Dropdown.Item href="#/action-1">
+                          Dashboard
+                        </Dropdown.Item>
+                        {/* <Dropdown.Item href="#/action-3"></Dropdown.Item> */}
+                        <Dropdown.Divider />
+                        <Dropdown.Item onClick={logout}>Log Out</Dropdown.Item>
+                      </Dropdown.Menu>
+                    </Dropdown> :
+                    <Link className='nav-link btn-grd rounded' to='/login'>Login</Link>
+                  }
                 </Nav>
 
               </Offcanvas.Body>

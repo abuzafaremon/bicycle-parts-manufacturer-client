@@ -3,6 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Login.css';
 import { useForm } from 'react-hook-form'
+import GoogleLogin from '../GoogleLogin/GoogleLogin';
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
@@ -26,9 +27,9 @@ const Login = () => {
           Login
         </Button>
         <Form.Group>
-          <Form.Text >New to Bicycle World?</Form.Text>
-          <Link to='/register'>Register Now</Link>
+          <Form.Text >New to Bicycle World? <Link to='/register'>Register Now</Link></Form.Text>
         </Form.Group>
+        <GoogleLogin />
       </Form>
     </section>
   )

@@ -12,7 +12,7 @@ const Banner = () => {
             <p className="lead">
               Here we provide any kind of parts/tools, gears or accessories for Bicycle
             </p>
-            <button className='btn bg-grd'>Get Started</button>
+            <button className='btn btn-grd border-0'>Get Started</button>
           </div>
         </Container>
       </div>

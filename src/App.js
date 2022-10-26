@@ -11,7 +11,7 @@ import Purchase from './Pages/Purchase/Purchase';
 
 function App() {
   return (
-    <div>
+    <div className='overflow-hidden'>
       <Header />
       <Routes>
         <Route path='/' element={<Home />}></Route>
