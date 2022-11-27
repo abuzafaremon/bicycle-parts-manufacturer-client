@@ -7,6 +7,10 @@
   transition: all .3s;
 }
 
+.section-title {
+  color: #253d4e;
+}
+
 .bg-grd {
   background: linear-gradient(to right, #ff99cc 0%, #33ccff 100%);
 }

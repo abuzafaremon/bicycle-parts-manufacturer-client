@@ -1,5 +1,12 @@
+#register {
+  background-image: url('../../../assets/images/accesories.PNG');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 .register {
-  max-width: 30%;
-  width: 100%;
+  max-width: 350px;
   margin: 0 auto;
+  background: #00000095;
 }

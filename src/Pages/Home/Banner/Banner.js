@@ -1,6 +1,7 @@
 import React from 'react';
 import './Banner.css';
 import { Container } from 'react-bootstrap'
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
   return (
@@ -12,7 +13,9 @@ const Banner = () => {
             <p className="lead">
               Here we provide any kind of parts/tools, gears or accessories for Bicycle
             </p>
-            <button className='btn btn-grd border-0'>Get Started</button>
+
+            <Link className='btn btn-grd border-0' to='/login'>Get Started</Link>
+
           </div>
         </Container>
       </div>

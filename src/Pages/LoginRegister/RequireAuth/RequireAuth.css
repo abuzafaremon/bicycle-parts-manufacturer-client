@@ -1,0 +1,6 @@
+.require-auth {
+  max-width: 450px;
+  width: 96%;
+  background: url('https://placeimg.com/400/225/arch') no-repeat center center;
+  background-size: cover;
+}

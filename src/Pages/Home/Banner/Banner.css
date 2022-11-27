@@ -2,7 +2,7 @@
   text-align: center;
   color: #fff;
   height: 80vh;
-  background: url('/public/assets/images/banner.jpg') no-repeat center center;
+  background: url('../../../assets/images/banner.jpg') no-repeat center center;
   background-attachment: fixed;
   background-size: cover;
 }

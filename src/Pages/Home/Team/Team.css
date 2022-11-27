@@ -1,0 +1,30 @@
+.member {
+  position: relative;
+}
+
+.member a {
+  color: #000;
+}
+
+.member-info {
+  position: absolute;
+  width: 80%;
+  background: #fff;
+  padding: 8px;
+  border-radius: 10px;
+  margin-top: -10px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.member:hover .member-info {
+  margin-top: -30px;
+}
+
+@media screen and (max-width:575px) {
+  .member-info {
+    position: static;
+    transform: translate(0, 0);
+    margin: 0 auto;
+  }
+}

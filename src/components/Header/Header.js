@@ -20,7 +20,6 @@ function Header() {
     signOut(auth);
     navigate('/login');
   };
-  console.log(user?.photoURL);
   return (
     <header className='sticky-top bg-grd'>
       {['md'].map((expand) => (
@@ -40,12 +39,12 @@ function Header() {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3 gap-2">
-                  <Link className='nav-link btn-grd rounded' to='/'>Home</Link>
-                  <Link className='nav-link btn-grd rounded' to='/purchase'>Purchase</Link>
+                  <Link className='nav-link btn-grd rounded p-2' to='/'>Home</Link>
+                  <Link className='nav-link btn-grd rounded p-2' to='/purchase'>Purchase</Link>
                   {user ?
                     <Dropdown>
                       <Dropdown.Toggle className='btn-grd border-0'>
-                        {user?.displayName.split(' ')[1]}
+                        <img src={user.photoURL} alt={user?.displayName?.split(' ')[0]} />
                       </Dropdown.Toggle>
 
                       <Dropdown.Menu className='bg-grd border-0'>
@@ -58,7 +57,7 @@ function Header() {
                         <Dropdown.Item onClick={logout}>Log Out</Dropdown.Item>
                       </Dropdown.Menu>
                     </Dropdown> :
-                    <Link className='nav-link btn-grd rounded' to='/login'>Login</Link>
+                    <Link className='nav-link btn-grd rounded p-2' to='/login'>Login</Link>
                   }
                 </Nav>
 

@@ -6,7 +6,7 @@ const BusinessSummery = () => {
   return (
     <section className='py-5'>
       <Container>
-        <h3 className='text-center'>Our Business Summery</h3>
+        <h2 className='text-center section-title mb-4'>Our Business Summery</h2>
         <div className="summaries bg-grd text-light w-75 m-auto rounded-4 p-3 d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
           <div className="summery text-center">
             <div className="fs-6">Total Customer</div>
