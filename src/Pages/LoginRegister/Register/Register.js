@@ -24,11 +24,15 @@ const Register = () => {
     await updateProfile({ displayName: data.name })
     reset()
   };
-  if (loading) {
+  if (loading || updating) {
     return <Loading />
   }
   if (user) {
     navigate('/')
+  }
+  let errorElement;
+  if (error || updateError) {
+    errorElement = <p className='text-danger'>{error?.message || updateError?.message}</p>
   }
 
   return (
@@ -60,8 +64,8 @@ const Register = () => {
           />
         </Form.Group>
         {errors.password && <p className='text-warning' role="alert">{errors.password?.message}</p>}
-
-        <Button className='btn-grd border-0' type="submit">
+        {errorElement}
+        <Button className='btn-grd border-0 w-100' type="submit">
           Register
         </Button>
         <Form.Group>

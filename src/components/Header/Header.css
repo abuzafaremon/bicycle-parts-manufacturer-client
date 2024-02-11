@@ -1,5 +1,10 @@
 .dropdown button {
-  width: 80px;
+  /* width: 80px; */
+  background: transparent;
+}
+
+.dropdown button:hover {
+  background: transparent;
 }
 
 .dropdown button img {

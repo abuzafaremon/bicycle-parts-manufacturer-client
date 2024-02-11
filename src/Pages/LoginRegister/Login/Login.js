@@ -31,9 +31,14 @@ const Login = () => {
   if (user) {
     navigate(from, { replace: true });
   }
-  if (loading) {
+  if (loading || sending) {
     return <Loading />
   }
+  let errorElement;
+  if (error) {
+    errorElement = <p className='text-danger'>{error?.message}</p>
+  }
+
   const forgotPassword = async () => {
     swal("Enter your email address: ", {
       content: {
@@ -73,7 +78,8 @@ const Login = () => {
             <Form.Control {...register('password')} type="password" placeholder="Password" required />
           </Form.Group>
           <span type='button' onClick={forgotPassword} className='nav-link text-warning'>Forgot Password?</span><br />
-          <Button className='btn-grd border-0' type="submit">
+          {errorElement}
+          <Button className='btn-grd border-0 w-100' type="submit">
             Login
           </Button>
           <Form.Group>

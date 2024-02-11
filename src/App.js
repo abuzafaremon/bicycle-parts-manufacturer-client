@@ -12,7 +12,7 @@ import Purchase from './Pages/Purchase/Purchase';
 
 function App() {
   return (
-    <div className='overflow-hidden'>
+    <div className=''>
       <Header />
       <Routes>
         <Route path='/' element={<Home />}></Route>
